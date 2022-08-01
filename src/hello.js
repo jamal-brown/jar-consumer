@@ -11,7 +11,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $.ajax({
-        url: "https://jar-spring-rest-service.azurewebsites.net/greeting"
+        url: "https://dotnetcors001.azurewebsites.net/api/todo"
         //url:"http://localhost:5000/api/todo"
     }).then(function(data, status, jqxhr) {
        $('.item-id').append(data.id);
