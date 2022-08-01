@@ -8,6 +8,7 @@ $(document).ready(function() {
        console.log(jqxhr);
     });
 
+*/
 
 $(document).ready(function() {
     $.ajax({
@@ -21,20 +22,3 @@ $(document).ready(function() {
     });
 });
 
-*/
-
-$(document).ready(function() {
-    $.ajax({
-        url: "https://dotnetcors001.azurewebsites.net/api/todo"
-        //url:"http://localhost:5000/api/todo"
-    }).then(function(data, status, jqxhr) {
-        var json = $.parseJSON(data);
-        for (var i=0; i<json.length; ++i)
-        {
-            $('.item-id').append(json[i].id);
-            $('.item-name').append(json[i].name);
-            $('.item-isComplete').append(json[i].isComplete);
-            console.log(jqxhr);
-        }
-    });
-});
