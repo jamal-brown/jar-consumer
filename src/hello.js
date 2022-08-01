@@ -7,7 +7,7 @@ $(document).ready(function() {
        $('.greeting-content').append(data.content);
        console.log(jqxhr);
     });
-*/
+
 
 $(document).ready(function() {
     $.ajax({
@@ -18,5 +18,23 @@ $(document).ready(function() {
        $('.item-name').append(data.name);
        $('.item-isComplete').append(data.isComplete);
        console.log(jqxhr);
+    });
+});
+
+*/
+
+$(document).ready(function() {
+    $.ajax({
+        url: "https://dotnetcors001.azurewebsites.net/api/todo"
+        //url:"http://localhost:5000/api/todo"
+    }).then(function(data, status, jqxhr) {
+        var json = $.parseJSON(data);
+        for (var i=0; i<json.length; ++i)
+        {
+            $('.item-id').append(data.id);
+            $('.item-name').append(data.name);
+            $('.item-isComplete').append(data.isComplete);
+            console.log(jqxhr);
+        }
     });
 });
