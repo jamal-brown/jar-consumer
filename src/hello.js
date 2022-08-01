@@ -31,9 +31,9 @@ $(document).ready(function() {
         var json = $.parseJSON(data);
         for (var i=0; i<json.length; ++i)
         {
-            $('.item-id').append(data.id);
-            $('.item-name').append(data.name);
-            $('.item-isComplete').append(data.isComplete);
+            $('.item-id').append(json[i].id);
+            $('.item-name').append(json[i].name);
+            $('.item-isComplete').append(json[i].isComplete);
             console.log(jqxhr);
         }
     });
